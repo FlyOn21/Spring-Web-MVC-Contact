@@ -1,0 +1,19 @@
+# Application settings
+#----------------------------
+# Database settings
+MYSQL_DATABASE=<db name>
+MYSQL_HOST=<db host>
+MYSQL_HOST_PORT=<db port>
+MYSQL_USER=<db user>
+MYSQL_PASSWORD=<db password>
+MYSQL_JDBC_DRIVER=com.mysql.cj.jdbc.Driver
+MYSQL_JDBC_URL_PREFIX=jdbc:mysql://
+#---------------------------
+# Hibernate settings
+HIBERNATE_CURRENT_SESSION_CONTEXT_CLASS=thread
+HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
+HIBERNATE_SHOW_SQL=false
+HIBERNATE_FORMAT_SQL=true
+HIBERNATE_HBM2DDL_AUTO=update
+HIBERNATE_CONNECTION_POOL_SIZE=1
+HIBERNATE_GENERATE_STATISTICS=false
