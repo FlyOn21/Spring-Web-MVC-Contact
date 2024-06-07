@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  ### DB START
+  mysql:
+    image:  mysql:8.0.36-debian
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    hostname: ${MYSQL_HOST}
+    ports:
+      - ${MYSQL_HOST_PORT}:${MYSQL_CONTAINER_PORT}
+    volumes:
+      - mysql_db_data_1:/var/lib/mysql
+
+volumes:
+  mysql_db_data_1:

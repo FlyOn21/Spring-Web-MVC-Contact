@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="customer_add">
+<!--	<div th:if="${!#lists.isEmpty(errors)}" class="error-msg" th:text="${errors}"></div>-->
+	<div class="container-form">
+		<h1>Create New Customer</h1>
+		<form th:action="@{/customers/create}" method="post" class="form-style">
+			<label for="firstName">First Name:</label>
+			<input type="text" id="firstName" name="firstName" placeholder="John" th:value="${formData?.firstName}" required>
+			<div th:if="${validationFormErrors?.containsKey('firstName')}" class="error-msg-validate" th:text="${validationFormErrors['firstName']}"></div>
+			<br>
+
+			<label for="lastName">Last Name:</label>
+			<input type="text" id="lastName" name="lastName" placeholder="Doe" th:value="${formData?.lastName}" required>
+			<div th:if="${validationFormErrors?.containsKey('lastName')}" class="error-msg-validate" th:text="${validationFormErrors['lastName']}"></div>
+			<br>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" placeholder="example@example.com" th:value="${formData?.email}" required>
+			<div th:if="${validationFormErrors?.containsKey('email')}" class="error-msg-validate" th:text="${validationFormErrors['email']}"></div>
+			<br>
+
+			<label for="phone">Phone:</label>
+			<input type="text" id="phone" name="phoneNumber" placeholder="+380501234567" th:value="${formData?.phoneNumber}" required>
+			<div th:if="${validationFormErrors?.containsKey('phoneNumber')}" class="error-msg-validate" th:text="${validationFormErrors['phoneNumber']}"></div>
+			<br>
+
+			<button type="submit" class="button button-submit">Submit</button>
+		</form>
+		<a th:href="@{/customers}" class="button button-return">Back to List</a>
+	</div>
+</div>
+</body>
+</html>
