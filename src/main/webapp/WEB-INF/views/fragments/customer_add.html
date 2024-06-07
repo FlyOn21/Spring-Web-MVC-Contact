@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="customer_add">
-<!--	<div th:if="${!#lists.isEmpty(errors)}" class="error-msg" th:text="${errors}"></div>-->
+	<div th:if="${!#lists.isEmpty(errors)}" class="error-msg" th:text="${errors}"></div>
 	<div class="container-form">
 		<h1>Create New Customer</h1>
 		<form th:action="@{/customers/create}" method="post" class="form-style">

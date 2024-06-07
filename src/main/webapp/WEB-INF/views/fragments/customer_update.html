@@ -2,8 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<body style="background-color: #E9ECEB;">
 		<div th:fragment="customer_update">
+			<div th:if="${!#lists.isEmpty(errors)}" class="error-msg" th:text="${errors}"></div>
 			<div class="container-form">
-				<h1>Create New Customer</h1>
+				<h1>Update Customer</h1>
 				<form th:object="${customer}" th:action="@{/customers/update/processing}" method="POST" class="form-style">
 					<input type="hidden" id="id" name="id" th:field="*{id}">
 					<input type="hidden" id="customerId" name="customerId" th:field="*{customerId}">
